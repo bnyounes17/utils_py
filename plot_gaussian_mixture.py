@@ -38,3 +38,13 @@ def plot_gaussian_mixture(clusterer, X, resolution=1000, show_ylabels=True):
         plt.ylabel("$x_2$", fontsize=14, rotation=0)
     else:
         plt.tick_params(labelleft=False)
+
+# plot anomalies using gaussian mixture
+def plot_anomalies_gm(model, X, anomalies):
+    plt.figure(figsize=(8, 4))
+
+    plot_gaussian_mixture(gm, X)
+    plt.scatter(anomalies[:, 0], anomalies[:, 1], color='r', marker='*')
+    plt.ylim(top=5.1)
+
+    plt.show()
